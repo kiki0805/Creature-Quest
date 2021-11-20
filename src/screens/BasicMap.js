@@ -24,9 +24,13 @@ import HMSMap, {
   Interpolator,
 } from '@hmscore/react-native-hms-map';
 import React from 'react';
-import {SafeAreaView, PermissionsAndroid} from 'react-native';
+import {SafeAreaView, PermissionsAndroid, Image} from 'react-native';
 
 import {styles} from '../styles/styles';
+import mapStyleJson from '../mapStyle.json';
+
+let planeRef;
+
 export default class BasicMap extends React.Component {
   static options = {
     topBar: {
@@ -64,6 +68,9 @@ export default class BasicMap extends React.Component {
           style={styles.fullHeight}
           mapType={MapTypes.NORMAL}
           myLocationButtonEnabled={this.state.myLocationButtonEnabled}
+          // markerClusterTextColor="transparent"
+          zoomControlsEnabled={false}
+          mapStyle={JSON.stringify(mapStyleJson)}
           camera={{
             target: {
               latitude: 41.02155220194891,
@@ -71,7 +78,7 @@ export default class BasicMap extends React.Component {
             },
             zoom: 12,
           }}>
-          <HMSMarker
+          {/* <HMSMarker
             title="Maiden's Tower"
             snippet="This is a default marker"
             rotation={this.state.rotation}
@@ -87,6 +94,111 @@ export default class BasicMap extends React.Component {
               longitude: 29.0037998967586,
             }}
           />
+          <HMSMarker
+            icon={{hue: Hue.ORANGE}}
+            title="Ayasofia"
+            snippet="This is a colored default marker"
+            clusterable
+            coordinate={{
+              latitude: 41.008699470240245,
+              longitude: 28.98015976031702,
+            }}
+          />
+          <HMSMarker
+            icon={{hue: Hue.MAGENTA}}
+            title="Sultan Ahmet"
+            snippet="This is a colored default marker"
+            clusterable
+            coordinate={{
+              latitude: 41.00542331543524,
+              longitude: 28.97691153026857,
+            }}
+          />
+          <HMSMarker
+            icon={{hue: Hue.AZURE}}
+            title="Topkapı Museum"
+            snippet="This is a colored default marker"
+            clusterable
+            coordinate={{
+              latitude: 41.01223774385668,
+              longitude: 28.983498212850378,
+            }}
+          />
+          <HMSMarker
+            icon={{hue: Hue.ROSE}}
+            title="Column of Constantine"
+            snippet="This is a colored default marker"
+            clusterable
+            coordinate={{
+              latitude: 41.0087711,
+              longitude: 28.97133142052397,
+            }}
+          /> *}
+          
+          {/* <HMSMarker
+            icon={{
+              uri: Image.resolveAssetSource(
+                require("../assets/galata-tower.png")
+              ).uri,
+              width: 140,
+              height: 150,
+            }}
+            coordinate={{
+              latitude: 41.02564844393837,
+              longitude: 28.974169719709817,
+            }}
+          >
+            {this.CustomInfoWindow()}
+          </HMSMarker> */}
+          <HMSMarker
+            icon={{
+              uri: Image.resolveAssetSource(
+                require('../assets/Monster1-02-01.png'),
+              ).uri,
+              height: 437,
+              width: 332,
+            }}
+            title="Gülhane Parkı"
+            coordinate={{
+              latitude: 41.01358808151719,
+              longitude: 28.98213804657346,
+            }}
+          />
+          <HMSMarker
+            title="Validebağ Korusu"
+            snippet="This is custom icon from url."
+            icon={{
+              uri: Image.resolveAssetSource(
+                require('../assets/Monster1-01.png'),
+              ).uri,
+              height: 355,
+              width: 333,
+            }}
+            coordinate={{
+              latitude: 41.01432234547145,
+              longitude: 29.046580953343877,
+            }}
+          />
+          {/* <HMSMarker
+            ref={(e) => {
+              planeRef = e;
+            }}
+            onAnimationStart={(e) =>
+              console.log(`Animation ${e.nativeEvent.type} Started`)
+            }
+            onAnimationEnd={(e) =>
+              console.log(
+                `Animation ${e.nativeEvent.type} Ended in ${e.nativeEvent.duration} ms`,
+              )
+            }
+            icon={{
+              asset: 'plane.png',
+            }}
+            coordinate={{
+              latitude: 41.02664844393837,
+              longitude: 28.984169719709817,
+            }}
+          /> */}
         </HMSMap>
       </SafeAreaView>
     );

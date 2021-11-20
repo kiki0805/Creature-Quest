@@ -3,43 +3,39 @@
     "mapFeature": "all",
     "options": "geometry",
     "paint": {
-      "color": "#25292B"
+      "color": "#f5e3b8"
     }
   },
   {
     "mapFeature": "all",
     "options": "labels.text.stroke",
     "paint": {
-      "color": "#25292B"
+      "color": "#f5e3b8"
     }
   },
   {
     "mapFeature": "all",
     "options": "labels.icon",
     "paint": {
-      "icon-type": "night"
+      "icon-type": "simple"
     }
   },
   {
     "mapFeature": "administrative",
     "options": "labels.text.fill",
-    "paint": {
-      "color": "#7C7770"
-    }
+    "visibility": false
   },
   {
     "mapFeature": "administrative.country",
     "options": "geometry",
     "paint": {
-      "color": "#9D9D9D"
+      "color": "#d9d9d9"
     }
   },
   {
     "mapFeature": "administrative.country",
     "options": "labels.text.fill",
-    "paint": {
-      "color": "#F9EBDA"
-    }
+    "visibility": false
   },
   {
     "mapFeature": "administrative.province",
@@ -51,15 +47,13 @@
   {
     "mapFeature": "administrative.capital",
     "options": "labels.text.fill",
-    "paint": {
-      "color": "#F9EBDA"
-    }
+    "visibility": false
   },
   {
     "mapFeature": "landcover.parkland",
     "options": "geometry",
     "paint": {
-      "color": "#283631"
+      "color": "#c9f2e4"
     }
   },
   {
@@ -72,213 +66,154 @@
   {
     "mapFeature": "landcover",
     "options": "labels.text.fill",
-    "paint": {
-      "color": "#7C7770"
-    }
+    "visibility": false
   },
   {
     "mapFeature": "landcover.parkland",
     "options": "labels.text.fill",
-    "paint": {
-      "color": "#8BAA7F"
-    }
+    "visibility": false
   },
   {
     "mapFeature": "poi.shopping",
     "options": "labels.text.fill",
-    "paint": {
-      "color": "#907935"
-    }
+    "visibility": false
   },
   {
     "mapFeature": "landcover.human-made.building",
     "visibility": false,
-    "options": "labels.text.fill",
-    "paint": {
-      "color": "#000000"
-    }
+    "options": "labels.text.fill"
   },
   {
     "mapFeature": "poi.tourism",
     "options": "labels.text.fill",
-    "paint": {
-      "color": "#9E7E56"
-    }
+    "visibility": false
   },
   {
     "mapFeature": "poi.beauty",
     "options": "labels.text.fill",
-    "paint": {
-      "color": "#A37C90"
-    }
+    "visibility": false
   },
   {
     "mapFeature": "poi.leisure",
     "options": "labels.text.fill",
-    "paint": {
-      "color": "#986D8D"
-    }
+    "visibility": false
   },
   {
     "mapFeature": "poi.eating&drinking",
     "options": "labels.text.fill",
-    "paint": {
-      "color": "#AB7346"
-    }
+    "visibility": false
   },
   {
     "mapFeature": "poi.lodging",
     "options": "labels.text.fill",
-    "paint": {
-      "color": "#8667A2"
-    }
+    "visibility": false
   },
   {
     "mapFeature": "poi.health-care",
     "options": "labels.text.fill",
-    "paint": {
-      "color": "#B6777C"
-    }
+    "visibility": false
   },
   {
     "mapFeature": "poi.public-service",
     "options": "labels.text.fill",
-    "paint": {
-      "color": "#737C8F"
-    }
+    "visibility": false
   },
   {
     "mapFeature": "poi.business",
     "options": "labels.text.fill",
-    "paint": {
-      "color": "#6B729D"
-    }
+    "visibility": false
   },
   {
     "mapFeature": "poi.automotive",
     "options": "labels.text.fill",
-    "paint": {
-      "color": "#6B729D"
-    }
+    "visibility": false
   },
   {
     "mapFeature": "poi.sports.outdoor",
     "options": "labels.text.fill",
-    "paint": {
-      "color": "#649464"
-    }
+    "visibility": false
   },
   {
     "mapFeature": "poi.sports.other",
     "options": "labels.text.fill",
-    "paint": {
-      "color": "#478D90"
-    }
+    "visibility": false
   },
   {
     "mapFeature": "poi.natural",
     "options": "labels.text.fill",
-    "paint": {
-      "color": "#649464"
-    }
+    "visibility": false
   },
   {
     "mapFeature": "road.highway",
     "options": "labels.text.fill",
-    "paint": {
-      "color": "#E3CAA2"
-    }
+    "visibility": false
   },
   {
     "mapFeature": "road.national",
     "options": "labels.text.fill",
-    "paint": {
-      "color": "#C6B293"
-    }
+    "visibility": false
   },
   {
     "mapFeature": "road.province",
     "options": "labels.text.fill",
-    "paint": {
-      "color": "#A7ADB0"
-    }
+    "visibility": false
   },
   {
     "mapFeature": "road.city-arterial",
     "options": "labels.text.fill",
-    "paint": {
-      "color": "#808689"
-    }
+    "visibility": false
   },
   {
     "mapFeature": "road.minor-road",
     "options": "labels.text.fill",
-    "paint": {
-      "color": "#808689"
-    }
+    "visibility": false
   },
   {
     "mapFeature": "road.sidewalk",
     "options": "labels.text.fill",
-    "paint": {
-      "color": "#808689"
-    }
+    "visibility": false
   },
   {
     "mapFeature": "road.highway.country",
     "options": "geometry.fill",
-    "paint": {
-      "color": "#927C5B"
-    }
+    "visibility": false
   },
   {
     "mapFeature": "road.highway.city",
     "options": "geometry.fill",
-    "paint": {
-      "color": "#8A7A60"
-    }
+    "visibility": false
   },
   {
     "mapFeature": "road.national",
     "options": "geometry.fill",
-    "paint": {
-      "color": "#5D5240"
-    }
+    "visibility": false
   },
   {
     "mapFeature": "road.province",
     "options": "geometry.fill",
-    "paint": {
-      "color": "#3B4042"
-    }
+    "visibility": false
   },
   {
     "mapFeature": "road.city-arterial",
     "options": "geometry.fill",
     "paint": {
-      "color": "#343A3D"
+      "color": "#a1a1d1"
     }
   },
   {
     "mapFeature": "road.minor-road",
     "options": "geometry.fill",
-    "paint": {
-      "color": "#343A3D"
-    }
+    "visibility": false
   },
   {
     "mapFeature": "road.sidewalk",
     "options": "geometry.fill",
-    "paint": {
-      "color": "#343A3D"
-    }
+    "visibility": false
   },
   {
     "mapFeature": "transit",
     "options": "labels.text.fill",
-    "paint": {
-      "color": "#6286AD"
-    }
+    "visibility": false
   },
   {
     "mapFeature": "transit.railway",
@@ -298,14 +233,14 @@
     "mapFeature": "transit.airport",
     "options": "geometry",
     "paint": {
-      "color": "#2C3235"
+      "color": "#d2d5d6"
     }
   },
   {
     "mapFeature": "water",
     "options": "geometry",
     "paint": {
-      "color": "#243850"
+      "color": "#dfe8f2"
     }
   },
   {
