@@ -41,7 +41,7 @@ const App: () => React$Node = () => {
     <NativeRouter>
       <NativeBaseProvider>
         <SafeAreaView>
-          <Button onPress={() => checkHMS()} title="Check HMS status" />
+          {/* <Button onPress={() => checkHMS()} title="Check HMS status" /> */}
           <Routes>
             <Route exact path="/" element={<Home />} />
             <Route exact path="/pets" element={<Pets />} />
