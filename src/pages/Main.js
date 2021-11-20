@@ -20,7 +20,7 @@ export default () => {
       <Link to="/" underlayColor="transparent">
         <View>
           <Center h="10" bg="secondary.500" shadow={3}>
-            I'm Pets. Go back
+            I'm Main. Go back
           </Center>
         </View>
       </Link>

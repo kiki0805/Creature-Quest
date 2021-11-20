@@ -34,6 +34,7 @@ import {NativeBaseProvider, VStack, Center, Heading} from 'native-base';
 import {NativeRouter, Route, Link, Routes} from 'react-router-native';
 import Home from './src/pages/Home';
 import Pets from './src/pages/Pets';
+import Main from './src/pages/Main';
 
 const App: () => React$Node = () => {
   return (
@@ -44,6 +45,7 @@ const App: () => React$Node = () => {
           <Routes>
             <Route exact path="/" element={<Home />} />
             <Route exact path="/pets" element={<Pets />} />
+            <Route exact path="/main" element={<Main />} />
           </Routes>
         </SafeAreaView>
       </NativeBaseProvider>

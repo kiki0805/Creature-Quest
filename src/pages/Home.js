@@ -22,14 +22,17 @@ export default (props) => {
       </Heading>
       <Link to="/pets" underlayColor="transparent">
         <View>
-          <Center w="64" h="20" bg="secondary.500" rounded="md" shadow={3} />
+          <Center w="64" h="20" bg="secondary.500" rounded="md" shadow={3}>
+            My Pets
+          </Center>
         </View>
       </Link>
-      <Link to="/pets" underlayColor="transparent">
-        <Center w="64" h="20" bg="secondary.500" rounded="md" shadow={3} />
-      </Link>
-      <Link to="/pets" underlayColor="transparent">
-        <Center w="64" h="20" bg="emerald.500" rounded="md" shadow={3} />
+      <Link to="/main" underlayColor="transparent">
+        <View>
+          <Center w="64" h="20" bg="secondary.500" rounded="md" shadow={3}>
+            Test Main
+          </Center>
+        </View>
       </Link>
     </VStack>
   );
