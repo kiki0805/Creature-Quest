@@ -15,7 +15,7 @@ import {
   Text,
   StatusBar,
   Button,
-  Alert
+  Alert,
 } from 'react-native';
 
 import {
@@ -26,58 +26,28 @@ import {
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
 
-import { HmsPushInstanceId } from "@hmscore/react-native-hms-push";
-import HMSAvailability, { ErrorCode } from '@hmscore/react-native-hms-availability';
+import {HmsPushInstanceId} from '@hmscore/react-native-hms-push';
+import HMSAvailability, {
+  ErrorCode,
+} from '@hmscore/react-native-hms-availability';
+import {NativeBaseProvider, VStack, Center, Heading} from 'native-base';
+import {NativeRouter, Route, Link, Routes} from 'react-router-native';
+import Home from './src/pages/Home';
+import Pets from './src/pages/Pets';
 
 const App: () => React$Node = () => {
   return (
-    <>
-      <StatusBar barStyle="dark-content" />
-      <SafeAreaView>
-        <ScrollView
-          contentInsetAdjustmentBehavior="automatic"
-          style={styles.scrollView}>
-          <Header />
-          {global.HermesInternal == null ? null : (
-            <View style={styles.engine}>
-              <Text style={styles.footer}>Engine: Hermes</Text>
-            </View>
-          )}
-          <Button
-            onPress={() => checkHMS()}
-            title="Check HMS status"
-          />
-          <View style={styles.body}>
-            <View style={styles.sectionContainer}>
-              <Text style={styles.sectionTitle}>Step One</Text>
-              <Text style={styles.sectionDescription}>
-                Edit <Text style={styles.highlight}>App.js</Text> to change this
-                screen and then come back to see your edits.
-              </Text>
-            </View>
-            <View style={styles.sectionContainer}>
-              <Text style={styles.sectionTitle}>See Your Changes</Text>
-              <Text style={styles.sectionDescription}>
-                <ReloadInstructions />
-              </Text>
-            </View>
-            <View style={styles.sectionContainer}>
-              <Text style={styles.sectionTitle}>Debug</Text>
-              <Text style={styles.sectionDescription}>
-                <DebugInstructions />
-              </Text>
-            </View>
-            <View style={styles.sectionContainer}>
-              <Text style={styles.sectionTitle}>Learn More</Text>
-              <Text style={styles.sectionDescription}>
-                Read the docs to discover what to do next:
-              </Text>
-            </View>
-            <LearnMoreLinks />
-          </View>
-        </ScrollView>
-      </SafeAreaView>
-    </>
+    <NativeRouter>
+      <NativeBaseProvider>
+        <SafeAreaView>
+          <Button onPress={() => checkHMS()} title="Check HMS status" />
+          <Routes>
+            <Route exact path="/" element={<Home />} />
+            <Route exact path="/pets" element={<Pets />} />
+          </Routes>
+        </SafeAreaView>
+      </NativeBaseProvider>
+    </NativeRouter>
   );
 };
 
@@ -123,38 +93,48 @@ const styles = StyleSheet.create({
 function checkHMS() {
   testHmsCorePresence()
     .then((hmsCoreOk) => testAccountByRequestingPushNotificationsToken())
-    .then((pushTokenRetrieved) => Alert.alert("SUCCESS", "All good. Start hacking!"))
-    .catch((anyError) => Alert.alert("FAIL", "" + anyError));
+    .then((pushTokenRetrieved) =>
+      Alert.alert('SUCCESS', 'All good. Start hacking!'),
+    )
+    .catch((anyError) => Alert.alert('FAIL', '' + anyError));
 }
 
 function testAccountByRequestingPushNotificationsToken() {
-  return HmsPushInstanceId.getToken("")
-    .then((pushTokenAsJsonObject) => {
-      var pushToken;
-      try {
-        pushToken = pushTokenAsJsonObject.result;
-      } catch (err) {
-        return Promise.reject(new Error("Push notifications token retrieved but malformated."));
-      }
-      console.log("HMS Push token: " + pushToken);
-      if (pushToken.isEmpty) {
-        return Promise.reject(new Error("Push notifications token retrieved, but empty. Clear app data and try again."));
-      } else {
-        return Promise.resolve("PushToken:" + pushToken);
-      }
-
-    });
+  return HmsPushInstanceId.getToken('').then((pushTokenAsJsonObject) => {
+    var pushToken;
+    try {
+      pushToken = pushTokenAsJsonObject.result;
+    } catch (err) {
+      return Promise.reject(
+        new Error('Push notifications token retrieved but malformated.'),
+      );
+    }
+    console.log('HMS Push token: ' + pushToken);
+    if (pushToken.isEmpty) {
+      return Promise.reject(
+        new Error(
+          'Push notifications token retrieved, but empty. Clear app data and try again.',
+        ),
+      );
+    } else {
+      return Promise.resolve('PushToken:' + pushToken);
+    }
+  });
 }
 
 function testHmsCorePresence() {
-  return HMSAvailability.isHuaweiMobileServicesAvailable().then((checkResult) => {
-    if (checkResult == ErrorCode.HMS_CORE_APK_AVAILABLE) {
-      return Promise.resolve("HMS Core available");
-    } else {
-      return HMSAvailability.getErrorString(checkResult)
-        .then((errorExplained) => Promise.reject("HMS Core not available because: " + errorExplained));
-    }
-  });
+  return HMSAvailability.isHuaweiMobileServicesAvailable().then(
+    (checkResult) => {
+      if (checkResult == ErrorCode.HMS_CORE_APK_AVAILABLE) {
+        return Promise.resolve('HMS Core available');
+      } else {
+        return HMSAvailability.getErrorString(checkResult).then(
+          (errorExplained) =>
+            Promise.reject('HMS Core not available because: ' + errorExplained),
+        );
+      }
+    },
+  );
 }
 
 export default App;
