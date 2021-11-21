@@ -164,6 +164,49 @@ export default class BasicMap extends React.Component {
               longitude: 28.98213804657346,
             }}
           />
+
+          <HMSMarker
+            icon={{
+              uri: Image.resolveAssetSource(
+                require('../assets/Monster1-03-01.png'),
+              ).uri,
+              height: 389,
+              width: 323,
+            }}
+            title="Gülhane Parksı"
+            coordinate={{
+              latitude: 41.07664844393837,
+              longitude: 28.954169719709817,
+            }}
+          />
+          <HMSMarker
+            icon={{
+              uri: Image.resolveAssetSource(
+                require('../assets/Monster1-04-01.png'),
+              ).uri,
+              height: 389,
+              width: 323,
+            }}
+            title="Gülhane Parksı"
+            coordinate={{
+              latitude: 41.05664844393837,
+              longitude: 28.904169719709817,
+            }}
+          />
+          <HMSMarker
+            icon={{
+              uri: Image.resolveAssetSource(
+                require('../assets/Monster1-05-02.png'),
+              ).uri,
+              height: 389,
+              width: 323,
+            }}
+            title="Gülhane Parksı"
+            coordinate={{
+              latitude: 41.06432234547145,
+              longitude: 29.096580953343877,
+            }}
+          />
           <HMSMarker
             title="Validebağ Korusu"
             snippet="This is custom icon from url."

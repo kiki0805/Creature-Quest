@@ -106,13 +106,19 @@ export default class Home extends React.Component {
           space={4}
           alignItems="center"
           style={{position: 'absolute', width: '100%', bottom: '5%'}}>
-          <Heading textAlign="center" mb="5" size="3xl" color="#41416b" italic  fontWeight="black">
-            Pet Hunter
+          <Heading
+            textAlign="center"
+            mb="5"
+            size="2xl"
+            color="#41416b"
+            italic
+            fontWeight="black">
+            Creature Quest
           </Heading>
           <Link to="/pets" underlayColor="transparent">
             <View>
               <Center w="64" h="16" bg="#845a7e" rounded="md" shadow={3}>
-                <Text style={{color: 'white', fontSize: 20}}>My Pets</Text>
+                <Text style={{color: 'white', fontSize: 20}}>My Creatures</Text>
               </Center>
             </View>
           </Link>

@@ -13,12 +13,20 @@ import {
   Button,
   NativeBaseProvider,
 } from 'native-base';
-import {View, Text, SafeAreaView, PermissionsAndroid} from 'react-native';
+import {
+  View,
+  Text,
+  SafeAreaView,
+  PermissionsAndroid,
+  NativeModules,
+} from 'react-native';
 import {Path, G} from 'react-native-svg';
 import AudioRecorderPlayer from 'react-native-audio-recorder-player';
 import {NativeRouter, Route, Link} from 'react-router-native';
 import PlayerView from '../components/PlayerView';
 import {Example, Record, Play} from '../components/Icons';
+
+const {AudioHandler} = NativeModules;
 
 export default class Main extends React.Component {
   audioRecorderPlayer = new AudioRecorderPlayer();
@@ -112,7 +120,7 @@ export default class Main extends React.Component {
           style={{position: 'absolute', width: '100%', top: 0, zIndex: 99}}>
           <Link to="/" underlayColor="transparent" style={{width: '100%'}}>
             <Center height="5" bg="#24243b" shadow={3}>
-              GIVE UP THE CUTE PET
+              GIVE UP THE MOST UNIQUE CREATURE
             </Center>
           </Link>
         </VStack>
@@ -142,6 +150,7 @@ export default class Main extends React.Component {
                     //   this.setState({playing: false});
                     // } else {
                     this.onStartPlay();
+                    // AudioHandler.setSoundEffect();
                     //   this.setState({playing: true});
                     // }
                   }}

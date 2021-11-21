@@ -20,10 +20,8 @@ import {Path, G} from 'react-native-svg';
 import AudioRecorderPlayer from 'react-native-audio-recorder-player';
 import {NativeRouter, Route, Link} from 'react-router-native';
 import {Example, Microphone} from './Icons';
-import { SvgUri } from 'react-native-svg';
 
-
-export default class PlayerView extends React.Component {
+export default class InfoCard extends React.Component {
   render() {
     return (
       <Flex
