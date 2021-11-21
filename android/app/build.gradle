@@ -43,6 +43,13 @@ android {
             storeFile file(keystoreProperties['storeFile'])
             storePassword keystoreProperties['storePassword']
         }
+
+        release {
+            keyAlias keystoreProperties['keyAlias']
+            keyPassword keystoreProperties['keyPassword']
+            storeFile file(keystoreProperties['storeFile'])
+            storePassword keystoreProperties['storePassword']
+        }
     }
 
     buildTypes {
@@ -50,10 +57,18 @@ android {
             minifyEnabled false
             signingConfig signingConfigs.hms
         }
+
+        release {
+            signingConfig signingConfigs.release
+        }
     }
 
     packagingOptions {
         pickFirst 'okhttp3/internal/publicsuffix/publicsuffixes.gz'
+    }
+
+    dexOptions {
+        javaMaxHeapSize "4g"
     }
 }
 
